@@ -1,5 +1,6 @@
-<form action="<%= cat_url(@cat) %>" method="post">
-  <input type="hidden" name="_method" value="patch"></input>
+<form action=
+<%= @cat.id.nil? ? 'cats_url' : 'cat_url(@cat)' %> method="post">
+  <input type="hidden" name="_method" <%='value=patch' if @cat.persisted? %> ></input>
   <label for="name">
     Name: <input type="text" name="cat[name]" value="<%=@cat.name%>" id="name" > 
   </label>
